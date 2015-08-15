@@ -30,4 +30,13 @@ RCT_EXPORT_VIEW_PROPERTY(loadingBackgroundColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(loadingForegroundColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(progressIndicate, BOOL)
 
+- (NSDictionary *)customDirectEventTypes {
+  return @{
+    @"loadStart" : @{@"registrationName" : @"onLoadStart"},
+    @"loadProgress" : @{@"registrationName" : @"onLoadProgress"},
+    @"loadError" : @{@"registrationName" : @"onLoadError"},
+    @"loaded" : @{@"registrationName" : @"onLoaded"}
+  };
+}
+
 @end
